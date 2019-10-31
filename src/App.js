@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useReducer } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import ClassCounter from "./components/ClassCounter";
@@ -19,36 +19,63 @@ import ComponentC from "./components/ComponentC";
 import Counter1 from "./components/Counter1";
 import Counter2 from "./components/Counter2";
 import Counter3 from "./components/Counter3";
+import ReducerCompA from "./components/ReducerCompA";
+import ReducerCompB from "./components/ReducerCompB";
+import ReducerCompC from "./components/ReducerCompC";
 
 export const UserContext = React.createContext();
 export const ChannelContext = React.createContext();
+export const CountContext = React.createContext();
+
+const initialState = 0;
+const reducer = (state, action) => {
+  switch (action) {
+    case "increment":
+      return state + 1;
+    case "decrement":
+      return state - 1;
+    case "reset":
+      return initialState;
+    default:
+      return state;
+  }
+};
 
 function App() {
+  const [count, dispatch] = useReducer(reducer, initialState);
   return (
-    <div className="App">
-      <Counter3 />
-      {/* <Counter2 /> */}
-      {/* <Counter1 /> */}
-      {/* <UserContext.Provider value={"Yi"}>
+    <CountContext.Provider
+      value={{ countState: count, countDispatch: dispatch }}
+    >
+      <div className="App">
+        Count - {count}
+        <ReducerCompA />
+        <ReducerCompB />
+        <ReducerCompC />
+        {/* <Counter3 /> */}
+        {/* <Counter2 /> */}
+        {/* <Counter1 /> */}
+        {/* <UserContext.Provider value={"Yi"}>
         <ChannelContext.Provider value={"Master"}>
           <ComponentC />
         </ChannelContext.Provider>
       </UserContext.Provider> */}
-      {/* <DataFetching /> */}
-      {/* <IntervalHookCounter />
+        {/* <DataFetching /> */}
+        {/* <IntervalHookCounter />
       <IntervalClassCounter /> */}
-      {/* <MouseContainer /> */}
-      {/* <HookMouse /> */}
-      {/* <ClassMouse /> */}
-      {/* <HookCounter6 /> */}
-      {/* <ClassCounter1 /> */}
-      {/* <HookCounter5 /> */}
-      {/* <HookCounter4 /> */}
-      {/* <HookCounter3 /> */}
-      {/* <HookCounter2 /> */}
-      {/* <ClassCounter />
+        {/* <MouseContainer /> */}
+        {/* <HookMouse /> */}
+        {/* <ClassMouse /> */}
+        {/* <HookCounter6 /> */}
+        {/* <ClassCounter1 /> */}
+        {/* <HookCounter5 /> */}
+        {/* <HookCounter4 /> */}
+        {/* <HookCounter3 /> */}
+        {/* <HookCounter2 /> */}
+        {/* <ClassCounter />
       <HookCounter /> */}
-    </div>
+      </div>
+    </CountContext.Provider>
   );
 }
 
