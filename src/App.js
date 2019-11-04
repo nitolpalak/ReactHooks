@@ -29,6 +29,11 @@ import MemoHookCounter from "./components/MemoHookCounter";
 import FocusInput from "./components/FocusInput";
 import ClassTimer from "./components/ClassTimer";
 import HookTimer from "./components/HookTimer";
+import DocTitle1 from "./components/DocTitle1";
+import DocTitle2 from "./components/DocTitle2";
+import CustomHookCounter1 from "./components/CustomHookCounter1";
+import CustomHookCounter2 from "./components/CustomHookCounter2";
+import UserForm from "./components/UserForm";
 
 export const UserContext = React.createContext();
 export const ChannelContext = React.createContext();
@@ -55,8 +60,13 @@ function App() {
       value={{ countState: count, countDispatch: dispatch }}
     >
       <div className="App">
-        <HookTimer />
-        <ClassTimer />
+        <UserForm />
+        {/* <CustomHookCounter1 />
+        <CustomHookCounter2 /> */}
+        {/* <DocTitle2 />
+        <DocTitle1 /> */}
+        {/* <HookTimer />
+        <ClassTimer /> */}
         {/* <FocusInput /> */}
         {/* <MemoHookCounter /> */}
         {/* <CallBackParentComponent /> */}
