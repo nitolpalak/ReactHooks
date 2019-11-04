@@ -22,6 +22,8 @@ import Counter3 from "./components/Counter3";
 import ReducerCompA from "./components/ReducerCompA";
 import ReducerCompB from "./components/ReducerCompB";
 import ReducerCompC from "./components/ReducerCompC";
+import DataFetching1 from "./components/DataFetching1";
+import DataFetching2 from "./components/DataFetching2";
 
 export const UserContext = React.createContext();
 export const ChannelContext = React.createContext();
@@ -48,10 +50,12 @@ function App() {
       value={{ countState: count, countDispatch: dispatch }}
     >
       <div className="App">
-        Count - {count}
+        <DataFetching2 />
+        {/* <DataFetching1 /> */}
+        {/* Count - {count}
         <ReducerCompA />
         <ReducerCompB />
-        <ReducerCompC />
+        <ReducerCompC /> */}
         {/* <Counter3 /> */}
         {/* <Counter2 /> */}
         {/* <Counter1 /> */}
