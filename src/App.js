@@ -24,6 +24,7 @@ import ReducerCompB from "./components/ReducerCompB";
 import ReducerCompC from "./components/ReducerCompC";
 import DataFetching1 from "./components/DataFetching1";
 import DataFetching2 from "./components/DataFetching2";
+import CallBackParentComponent from "./components/CallBackParentComponent";
 
 export const UserContext = React.createContext();
 export const ChannelContext = React.createContext();
@@ -50,7 +51,8 @@ function App() {
       value={{ countState: count, countDispatch: dispatch }}
     >
       <div className="App">
-        <DataFetching2 />
+        <CallBackParentComponent />
+        {/* <DataFetching2 /> */}
         {/* <DataFetching1 /> */}
         {/* Count - {count}
         <ReducerCompA />
