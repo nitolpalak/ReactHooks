@@ -25,6 +25,10 @@ import ReducerCompC from "./components/ReducerCompC";
 import DataFetching1 from "./components/DataFetching1";
 import DataFetching2 from "./components/DataFetching2";
 import CallBackParentComponent from "./components/CallBackParentComponent";
+import MemoHookCounter from "./components/MemoHookCounter";
+import FocusInput from "./components/FocusInput";
+import ClassTimer from "./components/ClassTimer";
+import HookTimer from "./components/HookTimer";
 
 export const UserContext = React.createContext();
 export const ChannelContext = React.createContext();
@@ -51,7 +55,11 @@ function App() {
       value={{ countState: count, countDispatch: dispatch }}
     >
       <div className="App">
-        <CallBackParentComponent />
+        <HookTimer />
+        <ClassTimer />
+        {/* <FocusInput /> */}
+        {/* <MemoHookCounter /> */}
+        {/* <CallBackParentComponent /> */}
         {/* <DataFetching2 /> */}
         {/* <DataFetching1 /> */}
         {/* Count - {count}
